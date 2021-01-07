@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Scae Programador Jr</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Empreendimentos</h1>
+        <section v-if="errored">
+            <p>Pedimos desculpas, não estamos conseguindo recuperar as informações no momento. Por favor, tente
+                novamente mais tarde.</p>
+        </section>
+
+        <section v-else>
+            <div v-if="loading">Carregando...</div>
+        </section>
+
+        <ul>
+            <li v-for="info in infos" :key="info.id">
+                {{ info.name }} - 
+                <img src="build.jpg" alt="Imagem" width="150" height="100">
+                <!-- <img :src="info.image" alt="Imagem"> -->
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
